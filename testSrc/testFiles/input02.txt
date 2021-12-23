@@ -1,0 +1,4 @@
+Asus 8 4 26000
+Samsung 4 3 20000
+Honor 128 5 60000
+Samsung 8 5 30000
