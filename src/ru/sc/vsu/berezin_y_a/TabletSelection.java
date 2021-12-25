@@ -46,18 +46,6 @@ public class TabletSelection {
         }
     }
 
-    public void printChosenTablet(List<Tablet> list, int index) {
-
-        Tablet gettingTablet = list.get(index);
-
-        System.out.print(gettingTablet.getName() + " ");
-        System.out.print(gettingTablet.getMemory() + " ");
-        System.out.print(gettingTablet.getRating() + " ");
-        System.out.print(gettingTablet.getPrice());
-        System.out.println();
-
-    }
-
     public String returnChosenTablet(List<Tablet> list, int index) {
 
         if (index == -1) {
@@ -68,31 +56,6 @@ public class TabletSelection {
 
         return gettingTablet.getName() + " " + gettingTablet.getMemory() + " " + gettingTablet.getRating() + " " +
                 gettingTablet.getPrice();
-
-    }
-
-    public Tablet createTablet() {
-
-        Scanner scn = new Scanner(System.in);
-
-        System.out.print("Enter the tablet name: ");
-        String name = scn.next();
-        System.out.print("Enter the tablet memory size: ");
-        int memory = scn.nextInt();
-        System.out.print("Enter the tablet rating: ");
-        int rating = scn.nextInt();
-        System.out.print("Enter the tablet price: ");
-        int price = scn.nextInt();
-
-        return new Tablet(name, memory, rating, price);
-
-    }
-
-    public void printList(List<Tablet> list) {
-
-        for (int i = 0; i < list.size(); i++) {
-            printChosenTablet(list, i);
-        }
 
     }
 

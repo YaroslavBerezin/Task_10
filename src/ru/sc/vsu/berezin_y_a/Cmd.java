@@ -49,12 +49,12 @@ public class Cmd {
 
             switch (cmdCommand) {
                 case EXIT -> System.exit(1);
-                case ADD_TABLET -> list.add(tablet.createTablet());
+                case ADD_TABLET -> list.add(createTablet());
                 case CLEAR_LIST -> list.clear();
-                case PRINT_LIST -> tablet.printList(list);
+                case PRINT_LIST -> printList(list);
                 case RUN -> {
                     System.out.print("Answer: ");
-                    tablet.printChosenTablet(list, tablet.returnIndex(list, countOfMoney));
+                    printChosenTablet(list, tablet.returnIndex(list, countOfMoney));
                 }
                 case RUN_IN_CONSOLE_FROM_FILE -> {
 
@@ -68,7 +68,7 @@ public class Cmd {
                     tablet.fillListFromStrList(listStr, list);
 
                     System.out.print("Answer: ");
-                    tablet.printChosenTablet(list, tablet.returnIndex(list, countOfMoney));
+                    printChosenTablet(list, tablet.returnIndex(list, countOfMoney));
 
                 }
                 case RUN_IN_FILE -> {
@@ -101,6 +101,43 @@ public class Cmd {
         System.out.println("-a   - add a tablet");
         System.out.println("-c   - clear list");
         System.out.println("-p   - print list in console");
+    }
+
+    public void printChosenTablet(List<Tablet> list, int index) {
+
+        Tablet gettingTablet = list.get(index);
+
+        System.out.print(gettingTablet.getName() + " ");
+        System.out.print(gettingTablet.getMemory() + " ");
+        System.out.print(gettingTablet.getRating() + " ");
+        System.out.print(gettingTablet.getPrice());
+        System.out.println();
+
+    }
+
+    public void printList(List<Tablet> list) {
+
+        for (int i = 0; i < list.size(); i++) {
+            printChosenTablet(list, i);
+        }
+
+    }
+
+    public Tablet createTablet() {
+
+        Scanner scn = new Scanner(System.in);
+
+        System.out.print("Enter the tablet name: ");
+        String name = scn.next();
+        System.out.print("Enter the tablet memory size: ");
+        int memory = scn.nextInt();
+        System.out.print("Enter the tablet rating: ");
+        int rating = scn.nextInt();
+        System.out.print("Enter the tablet price: ");
+        int price = scn.nextInt();
+
+        return new Tablet(name, memory, rating, price);
+
     }
 
 }

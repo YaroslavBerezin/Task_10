@@ -3,7 +3,6 @@ import org.junit.Test;
 import ru.sc.vsu.berezin_y_a.Tablet;
 import ru.sc.vsu.berezin_y_a.TabletSelection;
 import ru.sc.vsu.berezin_y_a.Utils.ListUtils;
-
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
